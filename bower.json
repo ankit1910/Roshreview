@@ -1,0 +1,22 @@
+{
+  "name": "Roshreview",
+  "version": "0.0.0",
+  "authors": [
+    "ankit1910 <ankit.bansal@vinsol.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.3.x",
+    "angular-mocks": "1.3.x",
+    "bootstrap": "~3.1.1",
+    "jquery": "~2.1.1",
+    "angular-route": "1.3.x"
+  }
+}
