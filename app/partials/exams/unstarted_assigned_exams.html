@@ -1,0 +1,32 @@
+<header-bar></header-bar>
+<unstarted-exam-header-bar></unstarted-exam-header-bar>
+
+<div class="tabs_data_container border5">
+  <div class="tabs_data">
+    <div class="examHistory">
+      <table>
+        <tbody>
+          <tr class="headRow">
+            <th class="desc">Name</th>
+            <th class="qa"> Questions</th>
+            <th class="status">Begin</th>
+          </tr>
+          <tr ng-repeat="exam in exams">
+            <td class="desc">
+              {{exam.name}}
+            </td>
+            <td class="qa">
+              {{exam.question_count}}
+            </td>
+            <td class="status">
+              <a ng-click="create_assigned(exam.id)">BEGIN EXAM</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="pageNavHolder bb0">
+        <page-navigator></page-navigator>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<header-bar> </header-bar>
+<div id="container">
+  <div class="userHomePage ">
+    <div class="leftContent">
+      <div class="welcomeBlock">
+        <div class="left">
+          <h1>Welcome Back!!</h1>
+          <ul class="tweets">
+            <li ng-repeat="tweet in tweets" class="first">
+              <p ng-bind-html="tweet.text | unsafe"></p>
+            </li>
+          </ul>
+        </div>
+        <div class="right">
+          <div id="questions_usage_graph">
+            <highchart id="chart1" config="questionProgress.chartConfig"></highchart>
+          </div>
+        </div>
+      </div>
+      <div class="scoreBlock">
+        <h2>Score Progress</h2>
+        <div id="score_progression_graph">
+            <highchart id="chart2" config="scoreProgression.chartConfig"></highchart>
+        </div>
+        <div id="sp_area"></div>
+      </div>
+    </div>
+
+    <div class="rightContent" style="height: 420px;">
+      <h2>
+        <a href="#/references">Full References</a>
+        <a href="#/abbreviations">Abbreviations</a>
+        <a href="#/contact_us">Contact Us</a>
+      </h2>
+
+      <p class="androidLink">
+        <a href="https://play.google.com/store/apps/details?id=com.vinsol.roshReview" target="_blank"><img alt="Htc01" src="/app/images/htc01.png"></a>
+        <a href="https://play.google.com/store/apps/details?id=com.vinsol.roshReview" class="ad-link-text" target="_blank">Download Android App</a>
+      </p>
+
+      <p class="iPhoneLink">
+        <a href="https://itunes.apple.com/us/app/rosh-review/id573443240" target="_blank"><img alt="Iphone02" src="/app/images/iphone02.png"></a>
+        <a href="https://itunes.apple.com/us/app/rosh-review/id573443240" class="ad-link-text" target="_blank">Download iPhone App</a>
+      </p>
+    </div>
+  </div>
+</div>

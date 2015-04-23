@@ -1,0 +1,66 @@
+<header-bar></header-bar>
+
+<div id="container">
+<exam-header-bar></exam-header-bar>
+
+<div class="tabs_data_container border5">
+  <div class="tabs_data">
+    <div class="examHistory">
+      <h1>Exams History</h1>
+      <table>
+        <tbody>
+          <tr class="headRow">
+            <th class="date">Date Created</th>
+            <th class="desc">Name</th>
+            <th class="qa">Attempted</th>
+            <th class="qc">Correct</th>
+            <th class="correct">% Score</th>
+            <th class="doc">Date of Completion</th>
+            <th></th>
+            <th class="status">Status</th>
+            <th class="status">Retake</th>
+          </tr>
+          <tr ng-repeat="exam in exams">
+              <td class="date">
+                {{exam.created_at | date:'mediumDate'}}
+              </td>
+              <td class="desc">
+                {{exam.name}}
+              </td>
+              <td class="qa">
+                {{exam.attempted_count | number}} / {{exam.question_count}}
+              </td>
+              <td class="qc" correct-count>
+              </td>
+              <td class="correct" score-percentage>
+              </td>
+              <td class="doc" date-of-completion></td>
+
+              <td ng-if="exam.is_submitted">
+                <img alt="Fa_check_circle" src="/app/images/fa_check_circle.png">
+              </td>
+              <td ng-if="!exam.is_submitted">
+                <img alt="Fa_check_circle" src="/app/images/fa_circle_o.png">
+              </td>
+
+              <td class="status">
+                  <a href="" class="greenColor-009500">Review</a>
+              </td>
+              <td class="status">
+                    <a href="" data-confirm="Exams results will be purged. Are you sure you want to continue?" data-method="put" rel="nofollow">Retake</a>
+              </td>
+            </tr>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="pageNavHolder bb0">
+        <page-navigator></page-navigator>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+      </div>

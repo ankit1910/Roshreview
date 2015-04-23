@@ -1,0 +1,103 @@
+<header-bar> </header-bar>
+
+<div id="container">
+        <link href="/assets/overlay.css?body=1" media="screen" rel="stylesheet" type="text/css">
+<link href="/assets/program_director.css?body=1" media="screen" rel="stylesheet" type="text/css">
+<div class="subscriber_perforance_block">
+<div id="perform_entire_program" class="outer_div border0 graph_design rp_page">
+  <div class="cumulative_block">
+    <div class="outer_div marb0 border5">
+      <div class="inner_div border5">
+        <h1 class="text-center bigtext">Cumulative Performance</h1>
+        <dl class="graph_two_block">
+          <dd class="high_graph fl relative cumulative_performances">
+            <link href="/assets/overlay.css?body=1" media="screen" rel="stylesheet" type="text/css">
+            <div class="loader_box hidden">
+              <div class="loader_overlay border5"></div>
+              <img alt="Loading" src="/assets/loading.gif">
+            </div>
+            <div class="select_wrapper">
+              <div id="select_div" class="outer_div border3 perform_category">
+                <div class="inner_div border3 select_scale">
+                  <div class="select_sec">
+                    <span class="label">COMPARE TO:</span>
+                    <div class="select_wrap">
+                      <span class="data">National Average</span>
+                      <span class="icon-drop"></span>
+                      <select class="styled_select" id="cumulative_performances_filter">
+                        <option value="national_average">National Average</option>
+                        <option value="program_average">Program Average</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="cumulative_performances_graph" class="chart_responsive">
+              <highchart id="chart5" config="chartConfigHistory"></highchart>
+            </div>
+          </dd>
+          <dd class="fr user_block cumulative_performance mart190 relative">
+            <link href="/assets/overlay.css?body=1" media="screen" rel="stylesheet" type="text/css">
+            <div class="loader_box hidden">
+              <div class="loader_overlay border5"></div>
+              <img alt="Loading" src="/assets/loading.gif">
+            </div>
+            <div class="main_text padt20" id="overall_percent_correct"><span>{{cumulative_performance}}</span>%</div>
+
+            <div class="sub_text">Overall Percent Correct</div>
+          </dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+
+    <div class="progress_two_block">
+    <div class="outer_div border5 graph_container">
+      <div class="inner_div border5">
+        <dl class="graph_two_block">
+          <dd class="high_graph fr relative questions_progress min_height200">
+            <link href="/assets/overlay.css?body=1" media="screen" rel="stylesheet" type="text/css">
+<div class="loader_box hidden">
+  <div class="loader_overlay border5"></div>
+  <img alt="Loading" src="/assets/loading.gif">
+</div>
+            <div id="questions_progress_graph">
+              <highchart id="chart2" config="chartConfig"></highchart>
+            </div>
+          </dd>
+          <dd class="fl user_block relative percentage_complete">
+            <link href="/assets/overlay.css?body=1" media="screen" rel="stylesheet" type="text/css">
+<div class="loader_box hidden">
+  <div class="loader_overlay border5"></div>
+  <img alt="Loading" src="/assets/loading.gif">
+</div>
+            Progress
+            <div class="main_text padt5" id="percentage_complete_graph"><span>
+              {{percentage_complete}}</span>%</div>
+            <div class="sub_text">Percent completed</div>
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="outer_div marb0 border5 graph_meter_container relative cumulative_performance">
+      <link href="/assets/overlay.css?body=1" media="screen" rel="stylesheet" type="text/css">
+      <div class="loader_box hidden">
+        <div class="loader_overlay border5"></div>
+        <img alt="Loading" src="/assets/loading.gif">
+      </div>
+      <div class="inner_div border5">
+        <dl class="graph_meter_block">
+          <dd class=" fl">
+            <div id="gauge_graph">
+              <highchart id="chart2" config="chartConfigMeter1"></highchart>
+              <highchart id="chart3" config="chartConfigMeter2"></highchart>
+            </div>
+          </dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+
+</div>

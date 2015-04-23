@@ -1,29 +1,26 @@
-roshreviewControllers.controller('LoginCtrl', ['$scope', '$http', function($scope, $http) {
-  // $scope.loginForm = {};
+roshreviewControllers.controller('LoginCtrl', ['$scope', '$location', 'Routes', 'Subscriber', 'Cookie',
+  function($scope, $location, Routes, Subscriber, Cookie) {
+  $scope.loginForm = {};
+  $scope.showNotice = false;
 
-  // $scope.loginForm.submitForm = function() {
-  //   var url = $scope.app.apiroutes.logInPath;
-  //   var dataObject = {
-  //     account: {
-  //       email: $scope.loginForm.email,
-  //       password: $scope.loginForm.password
-  //     }
-  //   };
-  //   var responsePromise = $http.post(url, dataObject, {});
+  if ($scope.loggedIn()) {
+    $location.url(Routes.dashboardPath).replace();
+  }
 
-  //   responsePromise.success(function(dataFromServer, status, headers, config) {
-  //     console.log(dataFromServer.meta);
-  //     $scope.setDataInCookie(dataFromServer.meta);
-  //     $location.url('/dashboard').replace();
-  //   });
-  //   responsePromise.error(function(data, status, headers, config) {
-  //     alert(data.errors);
-  //   });
-  // },
-
-  // $scope.setDataInCookie = function (data) {
-  //   setCookie('email', data.email, 1);
-  //   setCookie('authorization_token', data.authorization_token, 1);
-  //   setCookie('id', data.id, 1);
-  // }
+  $scope.loginForm.submitForm = function() {
+    var params = {
+      account: {
+        email: $scope.loginForm.email,
+        password: $scope.loginForm.password
+      }
+    };
+    Subscriber.login(params, function(data) {
+      Cookie.setData(data.meta);
+      $location.url(Routes.dashboardPath).replace()
+    }, function(data) {
+      $scope.showNotice = true;
+      $scope.noticeMessage = data.errors;
+      $scope.noticeClass = 'alert-message';
+    });
+  }
 }]);

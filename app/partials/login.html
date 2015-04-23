@@ -1,0 +1,30 @@
+<div id="container">
+  <flash-notice></flash-notice>
+  <div id="loginPage">
+    <h1>Sign In</h1>
+    <div class="formHolder">
+      <form novalidate ng-model="loginForm" class='form-horizontal'>
+        <div class="row">
+          <label for="account_email">Email</label>
+          <input class="text_field" id= "email" ng-model="loginForm.email" size="30" type="text">
+        </div>
+
+        <div class="row">
+          <label for="account_password">Password</label>
+          <input class="text_field" id="password" ng-model="loginForm.password" size="30" type="password">
+        </div>
+
+        <div class="row">
+          <input class="login" ng-click="loginForm.submitForm()" name="commit" type="submit" value="LOGIN">
+        </div>
+        <div class="note">
+          Don’t have an account?
+          <a href="/subscribers/new" class="bold" target="_parent">
+            Click here
+          </a>
+          to create an account.
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+<header-bar></header-bar>
+<div id="container">
+  <unstarted-exam-header-bar></unstarted-exam-header-bar>
+  <div class="tabs_data_container border5">
+    <div class="tabs_data">
+      <div class="leftContent createNewExam">
+        <h1>Create A New Exam</h1>
+        <div class="regForm">
+          <form novalidate ng-model="createExamForm" class='form-horizontal'>
+            <div class="row">
+              <div class="formField">
+                <label for="exam_question_count">
+                  Total Number of Questions <span class="grey">(max 155)</span>
+                </label>
+                <input id="exam_question_count" ng-model="createExamForm.question_count" size="30" type="text">
+                <div class="error">{{question_count_error}}</div>
+              </div>
+              <div class="formField fr">
+                <label for="exam_mode">Exam Mode</label>
+                <select id="exam_mode" ng-model="createExamForm.exam_mode" ng-options="mode for (mode, value) in details.exam_modes track by value">
+                </select>
+                <div class="error">{{mode_error}}</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="formField">
+                <label for="exam_question_type">Question Type</label>
+                <select id="exam_question_type" ng-model="createExamForm.question_type" ng-options="type for (type, value) in details.question_types track by value"></select>
+                <div class="error">{{question_type_error}}</div>
+              </div>
+              <div class="formField fr">
+                <label for="exam_timed">Time Mode</label>
+                <select id="exam_question_type" ng-model="createExamForm.time_mode" ng-options="mode for (mode, value) in details.time_modes track by value"></select></select>
+                <div class="error"></div>
+              </div>
+            </div>
+
+            <!-- <div class="row">
+              <label for="exam_timed">Time Mode</label>
+              <select id="exam_question_type" ng-model="createExamForm.time_mode" ng-options="mode for (mode, value) in details.time_mode_modes track by value"></select></select>
+              <div class="error"></div>
+            </div> -->
+
+            <!-- <div class="info" ng-model="totalQuestionSelected">Total Questions Selected:
+              <span class="number" id="total_selected_question_count">
+                {{totalQuestionSelected}}
+              </span>
+            </div> -->
+            <div class="row buttons clear">
+              <p><input class="btnCreateExam" ng-click="create()" name="commit" type="submit" value="Create Exam"></p>
+            </div>
+  </form>      </div>
+      </div>
+    </div>
+  </div>
+
+        </div>

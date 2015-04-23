@@ -1,0 +1,11 @@
+<div class="pageNav">
+  <div ng-if="previousPageNumber < 1">
+    <span class="previous_page disabled">«Previous</span>
+    <a class="next_page" rel="next" ng-click="fetchExams(nextpageNumber)">Next»</a>
+  </div>
+
+  <div ng-if="previousPageNumber > 0">
+    <a class="previous_page" ng-click="fetchExams(previousPageNumber)">«Previous</a>
+    <a class="next_page" rel="next" ng-click="fetchExams(nextpageNumber)">Next»</a>
+  </div>
+</div>
