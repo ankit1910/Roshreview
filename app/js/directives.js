@@ -25,11 +25,34 @@ roshreview.directive('statusimage', function() {
   };
 });
 
+roshreview.directive('styledSelect', function($compile) {
+  return {
+    templateUrl: 'partials/widgets/styled_select.html',
+    scope: {
+      objects: '=',
+      modelValue: '=',
+      idValue: '=',
+      changeListener: '='
+    },
+    link: function (scope, element, attrs) {
+      scope.$parent.$watch(attrs.modelValue, function(value) {
+        if(value) {
+          updateSelectedOption(value);
+        }
+      });
+
+      function updateSelectedOption(value) {
+        var elem = element.find('select');
+        elem.siblings('.data').html(value.name || value);
+      }
+    }
+  }
+});
 
 // Include all dependent js after initialization(EOF).
 includeScripts([
   "js/directives/header_bar.js", "js/directives/page_navigator.js",
-  "js/directives/flash_notice.js"
+  "js/directives/flash_notice.js", "js/directives/study_objective_select.js"
 ]);
 
 

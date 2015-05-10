@@ -5,6 +5,7 @@ roshreviewServices.factory('Routes', [function() {
     rootPath: '/',
     dashboardPath: '/dashboard',
     signInPath: '/login',
+    newSubscribersPath: '/new',
     selfCreatedExamsListPath: '#/self_created_exams',
     assignedExamsListPath: '#/assigned_exams',
     examShowPath: function(id) {
@@ -16,14 +17,15 @@ roshreviewServices.factory('Routes', [function() {
       selfCreatedExamsListPath: BasePath + 'api/v1/exams/history/self_created',
       assignedExamsListPath: BasePath + 'api/v1/exams/history/assigned',
       dashboardPath: BasePath + 'api/v1/subscriber/settings',
-      detailsForNew: BasePath + 'api/v1/exams/new/details',
+      detailsForNewExam: BasePath + 'api/v1/exams/new/details',
       selfCreatedExamsHistory: BasePath + 'api/v1/exams/history/self_created',
       assignedExamsHistory: BasePath + 'api/v1/exams/history/assigned',
       unstartedAssignedExams: BasePath + 'api/v1/exams/unstarted_assigned_exams',
       createAssignedExam : BasePath + 'api/v1/exams/create_assigned',
       createExamPath : BasePath + 'api/v1/exams',
       settingsPath : BasePath + 'api/v1/subscriber/settings',
-      updatePath : BasePath + 'api/v1/subscriber'
+      updatePath : BasePath + 'api/v1/subscriber',
+      detailsForNew : BasePath + 'api/v1/subscriber/new/details'
     },
     GraphApi: {
       questionProgressPath: GraphsBasePath + 'v1/subscriber/questions_progress',

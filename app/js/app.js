@@ -8,7 +8,8 @@ var roshreview = angular.module('roshreview', [
   'roshreviewServices',
   'ngCookies',
   'ngSanitize',
-  'highcharts-ng'
+  'highcharts-ng',
+  'angular-datepicker'
 ]);
 
 roshreview.config(['$routeProvider',
@@ -17,6 +18,10 @@ roshreview.config(['$routeProvider',
       when('/login', {
         templateUrl: 'partials/login.html',
         controller: 'LoginCtrl'
+      }).
+      when('/new', {
+        templateUrl: 'partials/new.html',
+        controller: 'NewSubscriberCtrl'
       }).
       when('/dashboard', {
         templateUrl: 'partials/dashboard.html',
@@ -92,7 +97,7 @@ roshreview.config(['$routeProvider',
 roshreview.run(function($rootScope, $location, Routes) {
   $rootScope.$on("$routeChangeStart", function(event, next, current) {
     if (!next.templateUrl.match(/^\/static_pages\/*/)) {
-      if (!$rootScope.loggedIn() && next.templateUrl != 'partials/login.html') {
+      if (!$rootScope.loggedIn() && next.templateUrl != 'partials/login.html' && next.templateUrl != 'partials/new.html') {
         $location.path(Routes.signInPath);
       }
     }

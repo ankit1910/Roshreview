@@ -9,7 +9,6 @@
     <h2>Login Information</h2>
     <form ng-model="settingsForm" class='form-horizontal'
           name="form", ng-submit="submitForm()">
-
       <div class="row">
         <div class="formField">
           <label for="subscriber_firstname">First Name</label>
@@ -48,6 +47,7 @@
           <div class="error"></div>
         </div>
       </div>
+
       <h2>Affiliation Information</h2>
       <div class="row">
         <div class="formField">
@@ -84,17 +84,7 @@
         </div>
         <div class="error"></div>
       </div>
-      <div class="row">
-        <div class="formField">
-          <label for="exam">Exam</label>
-          <select style="width:420px" id="exam" ng-model="settingsForm.study_objective" ng-options="study_objective.name for study_objective in settingsForm.study_objectives track by study_objective.id" ng-change="examChangeListener()"></select></select>
-        </div>
-        <div class="formField fr">
-          <label for="exam_date">Exam Date</label>
-          <input id="exam_date" ng-model="settingsForm.exam_date" type="text">
-          <div class="error">{{real_world_exam_date_error}}</div>
-        </div>
-      </div>
+      <div study-objective></div>
     </div>
     <div class="row buttons">
       <input class="login" ng-click="submitForm()" type="submit" value="Update Profile">

@@ -20,6 +20,8 @@
     "angular-route": "1.3.x",
     "angular-cookies": "1.3.x",
     "angular-sanitize": "1.3.x",
-    "highcharts-ng": "0.0.8"
+    "highcharts-ng": "0.0.8",
+    "highcharts": "~4.1.5",
+    "angular-native-picker": "~1.0.4"
   }
 }

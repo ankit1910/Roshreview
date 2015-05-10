@@ -35,6 +35,17 @@ roshreviewServices.factory('Subscriber', ['$http', 'Routes', 'Headers', function
       }).error(function(data, status, headers, config) {
         failureCB(data);
       })
+    },
+
+    details_for_new: function(successCB) {
+      $http({
+        method: 'GET',
+        url: Routes.Api.detailsForNew
+      }).success(function(data, status, headers, config) {
+        successCB(data);
+      }).error(function(data, status, headers, config) {
+        alert(data.errors);
+      })
     }
   };
 }]);

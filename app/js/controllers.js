@@ -34,5 +34,5 @@ includeScripts([
   "js/controllers/login.js", "js/controllers/dashboard.js",
   "js/controllers/exam.js", "js/controllers/exams_history.js",
   "js/controllers/settings.js", "js/controllers/performance.js",
-  "js/controllers/exams_question.js"
+  "js/controllers/exams_question.js", "js/controllers/new_subscriber.js"
 ]);

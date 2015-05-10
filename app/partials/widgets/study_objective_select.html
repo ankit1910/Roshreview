@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="formField">
+    <label for="exam">Exam</label>
+    <div class="select_wrap">
+      <span class="data"></span>
+      <span class="icon-drop"></span>
+      <select id="idValue" ng-model="modelValue" ng-options="object.name for object in objects"
+      ng-change="changeListener(modelValue)" class="styled_select"></select>
+    </div>
+  </div>
+  <div class="formField fr">
+    <label for="exam_date">Exam Date</label>
+    <input type="text" pick-a-date="settingsForm.exam_date" placeholder="Select Date" /> {{ date }}
+    <div class="error">{{real_world_exam_date_error}}</div>
+  </div>
+</div>

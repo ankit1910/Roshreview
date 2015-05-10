@@ -3,7 +3,7 @@ roshreviewServices.factory('Exam', ['$http', '$log', '$cookieStore', 'Routes', '
     get_details_for_new: function(successCB) {
       $http({
         method: 'GET',
-        url: Routes.Api.detailsForNew,
+        url: Routes.Api.detailsForNewExam,
         headers: Headers.get()
       }).success(function(data, status, headers, config) {
         successCB(data);

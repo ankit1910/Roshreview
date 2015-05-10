@@ -9,10 +9,6 @@ roshreviewControllers.controller('SettingsCtrl', ['$scope', '$filter', '$locatio
     $scope.settingsForm.exam_date = $filter('date')($scope.settingsForm.real_world_exam_date, "dd/MM/yyyy");
   });
 
-  $scope.examChangeListener = function() {
-    $scope.settingsForm.exam_date = $filter('date')($scope.settingsForm.study_objective.default_exam_date, "dd/MM/yyyy");
-  }
-
   $scope.submitForm = function() {
     var params = {
       subscriber: {

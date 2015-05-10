@@ -1,0 +1,6 @@
+<div class="select_wrap">
+  <span class="data"></span>
+  <span class="icon-drop"></span>
+  <select id="idValue" ng-model="modelValue" ng-options="(object.name || object) for object in objects"
+  ng-change="changeListener(modelValue)" class="styled_select"></select>
+</div>
